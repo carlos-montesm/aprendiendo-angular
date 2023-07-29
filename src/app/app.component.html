@@ -3,8 +3,11 @@
     Bienvenido al {{title}}!
   </h1>
   <p>Vamos a aprender Angular juntos</p>
+
+  <button (click)="ocultarVideojuegos(false)" *ngIf="mostrar_videojuegos">Ocultar</button>
+  <button (click)="ocultarVideojuegos(true)" *ngIf="!mostrar_videojuegos">Mostrar</button>
   
-  <videojuego></videojuego>
+  <videojuego *ngIf="mostrar_videojuegos"></videojuego>
   <zapatillas></zapatillas>
   <cursos></cursos>
 </div>
