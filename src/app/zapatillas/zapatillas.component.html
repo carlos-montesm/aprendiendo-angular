@@ -24,7 +24,10 @@
         <span [ngStyle]="{
             'text-decoration': !deportiva.stock ? 'line-through' : 'none'
         }">
-            {{deportiva.nombre}} - <strong>{{deportiva.precio}}$ </strong>
+            {{deportiva.nombre}} - 
+            <strong [class.altoPrecio]="deportiva.precio >= 80">
+                {{deportiva.precio}}$ 
+            </strong>
         </span>
 
         <span *ngIf="deportiva.precio < 80"
